@@ -48,13 +48,16 @@ def add(filepath, data, fer):
         print("You have already saved password of this website.")
 
 def list_password(data,fer):
-    try:
-        for key, value in data.items():
-            username, password=value.split('|')
-            password=fer.decrypt(password.encode()).decode()
-            print(key,":",username," | ",password)
-    except:
-        [print(key,':',value) for key, value in data.items()]
+    if data=={}:
+        print("You havenot saved any password yet")
+    else:  
+        try:
+            for key, value in data.items():
+                username, password=value.split('|')
+                password=fer.decrypt(password.encode()).decode()
+                print(key,":",username," | ",password)
+        except:
+            [print(key,':',value) for key, value in data.items()]
 
 def about():
     print('''
