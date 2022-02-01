@@ -56,11 +56,20 @@ def list_password(data,fer):
     except:
         [print(key,':',value) for key, value in data.items()]
 
+def about():
+    print('''
+This is a password manager that stores your password and uses a master password to encrypt and decrypt the given password.
+The master password you choose will be used to encrypt your password so choose it clearfully.
+In order to view your password you need the master password. 
+If the master password is not correct then still the program runs but you will get gibberish letters.
+''')
+
 def manager(fer):
     print('''Following are the commands: (Press one of the below)
     view: If you want to view a password.
     add: If you want to add a new password.
     list: If you want to see all the passwords.
+    help: To help.
     q: To quit''')
 
     while True:
@@ -74,6 +83,8 @@ def manager(fer):
             list_password(data,fer)
         elif mode=='q':
             exit()
+        elif mode=='help':
+            about()
         else:
             print("Invalid command.")
 
