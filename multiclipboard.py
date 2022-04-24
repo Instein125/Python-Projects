@@ -1,4 +1,3 @@
-from audioop import mul
 import sys
 import json
 import clipboard
